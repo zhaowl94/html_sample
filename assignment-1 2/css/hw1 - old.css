@@ -1,0 +1,38 @@
+header {
+    background: rgb(178, 178, 178);
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-family: Arail, 'Times New Roman', serif;
+    /* font-variant: caps; */
+    text-transform: uppercase
+}
+
+a {
+    font-family: Arail, 'Times New Roman', serif;
+    color: #000000;
+    background: rgb(197, 197, 197);
+}
+
+aside {
+    display: none;
+}
+
+h2 {
+    color: rgb(0, 0, 128);
+    ;
+    font-family: Arail, 'Times New Roman', serif;
+    text-transform: uppercase
+}
+
+section {
+    background: rgb(127, 127, 127);
+    font-family: Arail, 'Times New Roman', serif;
+}
+
+
+/* p {
+    font-family: Arail, 'Times New Roman', serif;
+} */
