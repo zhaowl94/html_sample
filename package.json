@@ -19,7 +19,7 @@
     "check:static": "node test/scripts/check-static.mjs",
     "check:external-links": "node test/scripts/check-external-links.mjs",
     "check": "npm run format:check && npm run lint && npm run check:static",
-    "test:unit": "node --test --test-isolation=none test/unit/registration.test.mjs test/unit/static-checker.test.mjs",
+    "test:unit": "node --test --test-isolation=none test/unit/lighthouse-scores.test.mjs test/unit/registration.test.mjs test/unit/static-checker.test.mjs",
     "test:e2e": "playwright test --project=chromium --project=firefox --project=webkit --project=mobile-chromium --project=chrome --project=msedge",
     "test:e2e:linux": "playwright test --project=chromium --project=firefox --project=webkit --project=mobile-chromium --project=visual",
     "test:e2e:windows": "playwright test --project=chrome --project=msedge --project=firefox --project=mobile-chromium --workers=2",
