@@ -7,12 +7,14 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
 import * as chromeLauncher from "chrome-launcher";
 import lighthouse from "lighthouse";
+import { collectScoreSamples } from "./lighthouse-scores.mjs";
 
 const projectRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
   "..",
 );
-const reportDirectory = path.join(projectRoot, "test-results", "lighthouse");
+const testResultsDirectory = path.join(projectRoot, "test-results");
+const reportDirectory = path.join(testResultsDirectory, "lighthouse");
 const serverScript = path.join(
   projectRoot,
   "node_modules",
@@ -34,6 +36,8 @@ const thresholds = {
   performance: 0.95,
   seo: 0.95,
 };
+const auditTimeout = 90_000;
+const confirmationSampleCount = 3;
 
 function startServer() {
   return spawn(
@@ -86,12 +90,29 @@ function reportName(pagePath) {
 }
 
 async function runAudit(url, chromePort) {
-  const result = await lighthouse(url, {
-    logLevel: "error",
-    onlyCategories: Object.keys(thresholds),
-    output: ["html", "json"],
-    port: chromePort,
+  let timeoutHandle;
+  const timeout = new Promise((_, reject) => {
+    timeoutHandle = setTimeout(() => {
+      reject(
+        new Error(`Lighthouse audit timed out after ${auditTimeout}ms: ${url}`),
+      );
+    }, auditTimeout);
   });
+  let result;
+
+  try {
+    result = await Promise.race([
+      lighthouse(url, {
+        logLevel: "error",
+        onlyCategories: Object.keys(thresholds),
+        output: ["html", "json"],
+        port: chromePort,
+      }),
+      timeout,
+    ]);
+  } finally {
+    clearTimeout(timeoutHandle);
+  }
 
   if (!result) {
     throw new Error(`Lighthouse did not return a report for ${url}.`);
@@ -109,7 +130,35 @@ function scoresFor(lhr) {
   );
 }
 
+async function runAndSaveAudit(url, chromePort, name, sampleNumber) {
+  console.log(`${url}: starting Lighthouse sample ${sampleNumber}`);
+  const result = await runAudit(url, chromePort);
+  const [htmlReport, jsonReport] = result.report;
+  const suffix = sampleNumber === 1 ? "" : `.sample-${sampleNumber}`;
+
+  await Promise.all([
+    writeFile(
+      path.join(reportDirectory, `${name}${suffix}.report.html`),
+      htmlReport,
+    ),
+    writeFile(
+      path.join(reportDirectory, `${name}${suffix}.report.json`),
+      jsonReport,
+    ),
+  ]);
+
+  return scoresFor(result.lhr);
+}
+
 async function main() {
+  if (
+    path.dirname(reportDirectory) !== testResultsDirectory ||
+    path.basename(reportDirectory) !== "lighthouse"
+  ) {
+    throw new Error(`Refusing to clean unexpected path: ${reportDirectory}`);
+  }
+
+  await rm(reportDirectory, { force: true, recursive: true });
   await mkdir(reportDirectory, { recursive: true });
 
   const server = startServer();
@@ -136,23 +185,13 @@ async function main() {
 
     for (const pagePath of pagePaths) {
       const url = `${baseUrl}${pagePath}`;
-      const result = await runAudit(url, chrome.port);
       const name = reportName(pagePath);
-      const [htmlReport, jsonReport] = result.report;
-
-      await Promise.all([
-        writeFile(
-          path.join(reportDirectory, `${name}.report.html`),
-          htmlReport,
-        ),
-        writeFile(
-          path.join(reportDirectory, `${name}.report.json`),
-          jsonReport,
-        ),
-      ]);
-
-      const scores = scoresFor(result.lhr);
-      summary[pagePath] = scores;
+      const { samples, scores } = await collectScoreSamples(
+        (sampleNumber) => runAndSaveAudit(url, chrome.port, name, sampleNumber),
+        thresholds,
+        confirmationSampleCount,
+      );
+      summary[pagePath] = { samples, scores };
 
       for (const [category, minimum] of Object.entries(thresholds)) {
         if (scores[category] < minimum) {
@@ -168,11 +207,17 @@ async function main() {
       `${JSON.stringify(summary, null, 2)}\n`,
     );
 
-    for (const [pagePath, scores] of Object.entries(summary)) {
+    for (const [pagePath, { samples, scores }] of Object.entries(summary)) {
       const formatted = Object.entries(scores)
         .map(([category, score]) => `${category}=${score.toFixed(2)}`)
         .join(", ");
-      console.log(`${pagePath}: ${formatted}`);
+      const sampleNote =
+        samples.length === 1
+          ? ""
+          : `; median of ${samples.length} samples (${samples
+              .map((sample) => sample.performance.toFixed(2))
+              .join(", ")} performance)`;
+      console.log(`${pagePath}: ${formatted}${sampleNote}`);
     }
 
     if (failures.length > 0) {
