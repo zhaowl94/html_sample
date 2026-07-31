@@ -1,13 +1,18 @@
+/*
+ * Historical peer-evaluation stylesheet.
+ * Preserved for learning history; active pages use hw1.css.
+ */
+
 h1 {
     text-align: center;
     text-transform: uppercase;
-    Color: #FFFFFF;
-    padding: 40px
+    color: #FFFFFF;
+    padding: 40px;
 }
 
 header {
     background-color: #E3D6EF;
-    background-image: url("http://intro-webdesign.com/CSS/assignment-2/images/flywheel.jpg");
+    background-image: url("../images/flywheel.jpg");
     height: 250px;
     clear: both;
 }
@@ -31,7 +36,6 @@ header a {
     padding-right: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border: solid thin;
     color: #000000;
     background-color: #C5C5C5;
     text-decoration: none;
@@ -41,7 +45,7 @@ header a {
 }
 
 .active {
-    background-color: #FFFFFF
+    background-color: #FFFFFF;
 }
 
 img {
@@ -49,7 +53,6 @@ img {
     width: 15%;
     margin-top: 20px;
     margin-left: 40px;
-    align: left;
     display: block;
     border: solid medium;
     border-color: #000000;
@@ -58,7 +61,6 @@ img {
 
 .left {
     position: absolute;
-    background-color: ;
     float: left;
     clear: right;
     overflow: auto;
@@ -71,10 +73,10 @@ img {
 }
 
 th {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background-color: #73AD21;
     text-align: left;
-    color: #FFFFFF
+    color: #FFFFFF;
 }
 
 tr {
@@ -101,7 +103,7 @@ tr:hover {
 }
 
 tr:first-child {
-    text-align: left !IMPORTANT;
+    text-align: left !important;
 }
 
 table td:first-child {

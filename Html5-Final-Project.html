@@ -1,53 +1,171 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="An accessible semantic HTML learning profile by zhaowl94."
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Learning Profile · HTML Sample" />
+    <meta
+      property="og:description"
+      content="A framework-free exercise in semantic and accessible HTML."
+    />
+    <meta
+      property="og:image"
+      content="https://zhaowl94.github.io/html_sample/assets/og.png"
+    />
+    <title>Learning Profile · HTML Sample</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="assets/stylesheets/profile.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<head>
-    <meta charset="utf-8">
-    <title>Html5 Final Project</title>
-</head>
+    <header class="profile-header">
+      <nav class="profile-nav" aria-label="Profile navigation">
+        <a class="lab-link" href="index.html">
+          <span aria-hidden="true">←</span>
+          Front-end Lab
+        </a>
+        <div class="section-links">
+          <a href="#practice">Practice</a>
+          <a href="#progress">Progress</a>
+          <a href="#next">Next</a>
+        </div>
+      </nav>
 
-<body>
-    <header id="One">
-        <h1>Wenlu Zhao</h1>
-
-        <nav>
-            <a href="#One">One</a>
-            <a href="#Two">Two</a>
-            <a href="#Three">Three</a>
-            <a href="#Four">Four</a>
-        </nav>
+      <div class="profile-hero">
+        <p class="eyebrow">SEMANTIC HTML EXERCISE · 01</p>
+        <h1>Learning the web,<br />one meaningful element at a time.</h1>
+        <p class="lede">
+          A small profile for <strong>zhaowl94</strong>, built with native HTML
+          elements and progressive enhancement.
+        </p>
+      </div>
     </header>
 
-    <section id="Two">
-        <h2>Favorite Foods</h2>
-        <ul>
-            <li>Apple</li>
-            <li>Pear</li>
-            <li>Banana</li>
-            <li>Peach</li>
+    <main id="main-content" tabindex="-1">
+      <section id="practice" class="content-section practice-section">
+        <header class="section-title">
+          <p>01 · Practice</p>
+          <h2>Patterns worth repeating</h2>
+        </header>
+        <ul class="practice-grid">
+          <li>
+            <span class="practice-number" aria-hidden="true">A</span>
+            <h3>Clear structure</h3>
+            <p>
+              Use headings, landmarks, and lists to make a page understandable
+              before adding visual polish.
+            </p>
+          </li>
+          <li>
+            <span class="practice-number" aria-hidden="true">B</span>
+            <h3>Keyboard first</h3>
+            <p>
+              Every destination and disclosure should work without a mouse or
+              touch screen.
+            </p>
+          </li>
+          <li>
+            <span class="practice-number" aria-hidden="true">C</span>
+            <h3>Resilient by default</h3>
+            <p>
+              Keep the core experience useful when scripts, networks, or
+              advanced browser features are unavailable.
+            </p>
+          </li>
         </ul>
-    </section>
+      </section>
 
-    <section id="Three">
-        <h2>Achievements</h2>
-        <p>Progress in this course (100%)<progress value="1">100%</progress><br />
-            Progress in the Specialization capstone (20%)<progress value="0.2">20%</progress><br />
-            Progress in life goals (40%)<progress value="0.4">40%</progress></p>
-    </section>
+      <section id="progress" class="content-section progress-section">
+        <header class="section-title">
+          <p>02 · Progress</p>
+          <h2>A learning snapshot</h2>
+        </header>
+        <div class="progress-list">
+          <div class="progress-item">
+            <div class="progress-label">
+              <span>Semantic page structure</span>
+              <strong>100%</strong>
+            </div>
+            <progress
+              aria-label="Semantic page structure progress"
+              value="100"
+              max="100"
+            >
+              100%
+            </progress>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label">
+              <span>Responsive CSS systems</span>
+              <strong>72%</strong>
+            </div>
+            <progress
+              aria-label="Responsive CSS systems progress"
+              value="72"
+              max="100"
+            >
+              72%
+            </progress>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label">
+              <span>Automated accessibility testing</span>
+              <strong>58%</strong>
+            </div>
+            <progress
+              aria-label="Automated accessibility testing progress"
+              value="58"
+              max="100"
+            >
+              58%
+            </progress>
+          </div>
+        </div>
+      </section>
 
-    <section id="Four">
-        <h2>More About Me</h2>
+      <section id="next" class="content-section next-section">
+        <header class="section-title">
+          <p>03 · Next</p>
+          <h2>What comes after the markup?</h2>
+        </header>
         <details>
-            <summary>My Childhood</summary>
-            <p>I grew up in a small city in northern China. There is a small forest next to the house, and I often play there.</p>
+          <summary>Build for more ways of using the web</summary>
+          <div class="details-body">
+            <p>
+              The next step is not another framework. It is learning how zoom,
+              high contrast, screen readers, slow networks, and different input
+              methods change the experience.
+            </p>
+            <p>
+              This repository uses those constraints as design inputs and
+              verifies them before publishing.
+            </p>
+          </div>
         </details>
-    </section>
+      </section>
+    </main>
 
-    <footer>
-        <p><img src="http://www.intro-webdesign.com/images/newlogo.png" alt="Web Design For Everybody">
-        This page was created by Wenlu Zhao & Colleen van Lent. To learn more about web design, visit <a href="http://intro-webdesign.com/">Intro to Web Design</a>.</p>
+    <footer class="profile-footer">
+      <p>Created by zhaowl94 as part of the HTML Sample learning archive.</p>
+      <p>
+        Inspired by an introductory exercise from
+        <a href="https://intro-webdesign.com/html5.html" rel="external">
+          Web Design for Everybody
+        </a>
+        ; the wording and visual design here are original.
+      </p>
     </footer>
-</body>
-
+  </body>
 </html>

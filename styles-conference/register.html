@@ -1,43 +1,210 @@
-<!DOCTYPE html>
-<!-- <html lang="en"> -->
-<html lang="zh">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A zero-data registration form demo for Signal Conference."
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Register · Signal Conference" />
+    <meta
+      property="og:description"
+      content="An accessible form demo that sends and stores no data."
+    />
+    <meta
+      property="og:image"
+      content="https://zhaowl94.github.io/html_sample/assets/og.png"
+    />
+    <title>Register · Signal Conference</title>
+    <link rel="icon" href="../assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="assets/stylesheets/main.css" />
+    <script src="assets/scripts/register.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<head>
-    <meta charset="utf-8">
-    <title>Styles Conference</title>
-    <link rel="stylesheet" href="assets/stylesheets/main.css">
-</head>
-
-<body>
-    <header>
-        <a href="index.html">Styles Conference</a>
-
-        <h1>Styles Conference</h1>
-        <h3>August 24&ndash;26th &mdash; Chicago, IL</h3>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="speakers.html">Speakers</a>
-            <a href="schedule.html">Schedule</a>
-            <a href="venue.html">Venue</a>
-            <a href="register.html">Register</a>
-        </nav>
+    <header class="conference-header">
+      <div class="conference-topbar">
+        <a class="lab-link" href="../index.html">
+          <span aria-hidden="true">←</span>
+          Front-end Lab
+        </a>
+        <p>Fictional multi-page exercise · 03</p>
+      </div>
+      <div class="brand-row">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">S/</span>
+          <span>Signal Conference</span>
+        </a>
+        <p class="event-meta">October 8–10 · Harbor Hall</p>
+      </div>
+      <nav class="conference-nav" aria-label="Signal Conference">
+        <a href="index.html">Home</a>
+        <a href="speakers.html">Speakers</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="venue.html">Venue</a>
+        <a href="register.html" aria-current="page">Register</a>
+      </nav>
     </header>
 
-    <h1>Register</h1>
+    <main id="main-content" tabindex="-1">
+      <header class="page-intro page-frame">
+        <p class="eyebrow">REGISTRATION DEMO</p>
+        <h1>Practice a respectful form flow.</h1>
+        <p>
+          This form validates entirely in your browser. It does not send a
+          request, save to browser storage, set cookies, or process payment.
+        </p>
+      </header>
 
-    <footer>
-        <small>&copy; Styles Conference</small>
+      <section
+        class="registration-layout page-frame"
+        aria-labelledby="form-heading"
+      >
+        <div class="registration-context">
+          <p class="eyebrow">DEMO PASS</p>
+          <h2 id="form-heading">Choose a fictional attendance plan</h2>
+          <p>
+            Complete the required fields to see a local confirmation message.
+            Use sample information rather than real personal data.
+          </p>
+          <ul class="privacy-list">
+            <li>No network submission</li>
+            <li>No local storage or cookies</li>
+            <li>No analytics or remote scripts</li>
+            <li>Refreshing the page clears everything</li>
+          </ul>
+        </div>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="speakers.html">Speakers</a>
-            <a href="schedule.html">Schedule</a>
-            <a href="venue.html">Venue</a>
-            <a href="register.html">Register</a>
-        </nav>
+        <form id="registration-form" novalidate>
+          <div class="form-field">
+            <label for="display-name">Sample display name</label>
+            <input
+              id="display-name"
+              name="displayName"
+              type="text"
+              required
+              minlength="2"
+              maxlength="60"
+              autocomplete="off"
+              aria-describedby="display-name-help display-name-error"
+            />
+            <p id="display-name-help" class="field-help">
+              Use at least two characters. A nickname is fine.
+            </p>
+            <p
+              id="display-name-error"
+              class="field-error"
+              aria-live="polite"
+            ></p>
+          </div>
+
+          <div class="form-field">
+            <label for="sample-email">Sample email</label>
+            <input
+              id="sample-email"
+              name="sampleEmail"
+              type="email"
+              required
+              maxlength="100"
+              autocomplete="off"
+              inputmode="email"
+              aria-describedby="sample-email-help sample-email-error"
+            />
+            <p id="sample-email-help" class="field-help">
+              Try a reserved address such as learner@example.com.
+            </p>
+            <p
+              id="sample-email-error"
+              class="field-error"
+              aria-live="polite"
+            ></p>
+          </div>
+
+          <div class="form-field">
+            <label for="pass-type">Demo pass</label>
+            <select
+              id="pass-type"
+              name="passType"
+              required
+              aria-describedby="pass-type-error"
+            >
+              <option value="">Choose a pass</option>
+              <option value="three-day">Three-day explorer</option>
+              <option value="studios">Studio sessions</option>
+              <option value="remote">Remote notes</option>
+            </select>
+            <p id="pass-type-error" class="field-error" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="access-notes">
+              Fictional access notes
+              <span>(optional)</span>
+            </label>
+            <textarea
+              id="access-notes"
+              name="accessNotes"
+              rows="4"
+              maxlength="240"
+              autocomplete="off"
+              aria-describedby="access-notes-help"
+            ></textarea>
+            <p id="access-notes-help" class="field-help">
+              This text remains only in the current form and is never submitted.
+            </p>
+          </div>
+
+          <div class="form-field form-field--check">
+            <input
+              id="demo-confirmation"
+              name="demoConfirmation"
+              type="checkbox"
+              required
+              aria-describedby="demo-confirmation-error"
+            />
+            <label for="demo-confirmation">
+              I understand this is a local demonstration, not a real booking.
+            </label>
+            <p
+              id="demo-confirmation-error"
+              class="field-error"
+              aria-live="polite"
+            ></p>
+          </div>
+
+          <button class="button button--primary" type="submit">
+            Complete local demo
+          </button>
+          <p
+            id="form-status"
+            class="form-status"
+            role="status"
+            tabindex="-1"
+          ></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="conference-footer page-frame">
+      <div>
+        <p class="footer-brand">Signal Conference</p>
+        <p>A fictional learning project by zhaowl94.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="speakers.html">Speakers</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="venue.html">Venue</a>
+      </nav>
     </footer>
-
-</body>
-
+  </body>
 </html>

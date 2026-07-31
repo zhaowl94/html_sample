@@ -1,43 +1,146 @@
-<!DOCTYPE html>
-<!-- <html lang="en"> -->
-<html lang="zh">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Meet the fictional speakers of Signal Conference."
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Speakers · Signal Conference" />
+    <meta
+      property="og:description"
+      content="Three fictional practitioners sharing practical lessons."
+    />
+    <meta
+      property="og:image"
+      content="https://zhaowl94.github.io/html_sample/assets/og.png"
+    />
+    <title>Speakers · Signal Conference</title>
+    <link rel="icon" href="../assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="assets/stylesheets/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<head>
-    <meta charset="utf-8">
-    <title>Styles Conference</title>
-    <link rel="stylesheet" href="assets/stylesheets/main.css">
-</head>
-
-<body>
-    <header>
-        <a href="index.html">Styles Conference</a>
-
-        <h1>Styles Conference</h1>
-        <h3>August 24&ndash;26th &mdash; Chicago, IL</h3>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="speakers.html">Speakers</a>
-            <a href="schedule.html">Schedule</a>
-            <a href="venue.html">Venue</a>
-            <a href="register.html">Register</a>
-        </nav>
+    <header class="conference-header">
+      <div class="conference-topbar">
+        <a class="lab-link" href="../index.html">
+          <span aria-hidden="true">←</span>
+          Front-end Lab
+        </a>
+        <p>Fictional multi-page exercise · 03</p>
+      </div>
+      <div class="brand-row">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">S/</span>
+          <span>Signal Conference</span>
+        </a>
+        <p class="event-meta">October 8–10 · Harbor Hall</p>
+      </div>
+      <nav class="conference-nav" aria-label="Signal Conference">
+        <a href="index.html">Home</a>
+        <a href="speakers.html" aria-current="page">Speakers</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="venue.html">Venue</a>
+        <a href="register.html">Register</a>
+      </nav>
     </header>
 
-    <h1>Speakers</h1>
+    <main id="main-content" tabindex="-1">
+      <header class="page-intro page-frame">
+        <p class="eyebrow">SPEAKERS</p>
+        <h1>Practitioners who turn principles into habits.</h1>
+        <p>
+          These profiles and sessions are fictional. They were written for this
+          repository to demonstrate structured editorial content without using
+          third-party biographies or portraits.
+        </p>
+      </header>
 
-    <footer>
-        <small>&copy; Styles Conference</small>
+      <section class="speaker-list page-frame" aria-label="Featured speakers">
+        <article id="maya-chen" class="speaker-card">
+          <div class="speaker-monogram" aria-hidden="true">MC</div>
+          <div class="speaker-copy">
+            <p class="speaker-role">ACCESSIBILITY ENGINEER</p>
+            <h2>Maya Chen</h2>
+            <h3>Beyond the audit: accessibility as daily infrastructure</h3>
+            <p>
+              Maya shows how design tokens, component contracts, and small
+              browser tests can move accessibility checks earlier in the work.
+            </p>
+            <ul class="topic-list" aria-label="Session topics">
+              <li>Keyboard contracts</li>
+              <li>Accessible names</li>
+              <li>Team ownership</li>
+            </ul>
+          </div>
+        </article>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="speakers.html">Speakers</a>
-            <a href="schedule.html">Schedule</a>
-            <a href="venue.html">Venue</a>
-            <a href="register.html">Register</a>
-        </nav>
+        <article id="idris-cole" class="speaker-card">
+          <div class="speaker-monogram" aria-hidden="true">IC</div>
+          <div class="speaker-copy">
+            <p class="speaker-role">FRONT-END ARCHITECT</p>
+            <h2>Idris Cole</h2>
+            <h3>Designing the fallback before the feature</h3>
+            <p>
+              Idris works backward from failure states to build interfaces that
+              remain understandable across slow networks and partial support.
+            </p>
+            <ul class="topic-list" aria-label="Session topics">
+              <li>Progressive enhancement</li>
+              <li>Dependency budgets</li>
+              <li>Failure modes</li>
+            </ul>
+          </div>
+        </article>
+
+        <article id="elena-martin" class="speaker-card">
+          <div class="speaker-monogram" aria-hidden="true">EM</div>
+          <div class="speaker-copy">
+            <p class="speaker-role">DESIGN OPERATIONS LEAD</p>
+            <h2>Elena Martín</h2>
+            <h3>Reviews that strengthen the system, not just the screen</h3>
+            <p>
+              Elena offers a practical review language for connecting visual
+              decisions to behavior, content, risk, and maintainability.
+            </p>
+            <ul class="topic-list" aria-label="Session topics">
+              <li>Review framing</li>
+              <li>Decision records</li>
+              <li>Shared vocabulary</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section class="closing-callout page-frame">
+        <p class="eyebrow">PLAN YOUR VISIT</p>
+        <h2>Pair each keynote with a hands-on studio.</h2>
+        <a class="button button--primary" href="schedule.html">
+          View the full schedule
+        </a>
+      </section>
+    </main>
+
+    <footer class="conference-footer page-frame">
+      <div>
+        <p class="footer-brand">Signal Conference</p>
+        <p>A fictional learning project by zhaowl94.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="venue.html">Venue</a>
+        <a href="register.html">Register</a>
+      </nav>
     </footer>
-
-</body>
-
+  </body>
 </html>

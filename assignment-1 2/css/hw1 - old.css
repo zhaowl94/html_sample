@@ -1,3 +1,8 @@
+/*
+ * Historical first-pass stylesheet.
+ * Preserved for learning history; active pages use hw1.css.
+ */
+
 header {
     background: rgb(178, 178, 178);
 }
@@ -5,13 +10,13 @@ header {
 h1 {
     text-align: center;
     color: #ffffff;
-    font-family: Arail, 'Times New Roman', serif;
+    font-family: Arial, 'Times New Roman', serif;
     /* font-variant: caps; */
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
 a {
-    font-family: Arail, 'Times New Roman', serif;
+    font-family: Arial, 'Times New Roman', serif;
     color: #000000;
     background: rgb(197, 197, 197);
 }
@@ -22,17 +27,16 @@ aside {
 
 h2 {
     color: rgb(0, 0, 128);
-    ;
-    font-family: Arail, 'Times New Roman', serif;
-    text-transform: uppercase
+    font-family: Arial, 'Times New Roman', serif;
+    text-transform: uppercase;
 }
 
 section {
     background: rgb(127, 127, 127);
-    font-family: Arail, 'Times New Roman', serif;
+    font-family: Arial, 'Times New Roman', serif;
 }
 
 
 /* p {
-    font-family: Arail, 'Times New Roman', serif;
+    font-family: Arial, 'Times New Roman', serif;
 } */
