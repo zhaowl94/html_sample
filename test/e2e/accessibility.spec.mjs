@@ -1,6 +1,9 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
+// Axe can exceed the default timeout during a cold Firefox start on Windows CI.
+test.describe.configure({ timeout: 60_000 });
+
 const pages = [
   "/index.html",
   "/Html5-Final-Project.html",
