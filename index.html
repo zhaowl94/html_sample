@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="三个可离线运行的原生 HTML 与 CSS 学习示例。"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HTML Sample · Static Front-end Lab" />
+    <meta
+      property="og:description"
+      content="A small, accessible collection of framework-free front-end exercises."
+    />
+    <meta
+      property="og:image"
+      content="https://zhaowl94.github.io/html_sample/assets/og.png"
+    />
+    <meta property="og:url" content="https://zhaowl94.github.io/html_sample/" />
+    <title>HTML Sample · 静态前端实验室</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="assets/stylesheets/gallery.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#examples">跳到示例列表</a>
+
+    <header class="site-header">
+      <nav class="topbar" aria-label="站点导航">
+        <a class="wordmark" href="index.html" aria-current="page">
+          <span aria-hidden="true">&lt;/&gt;</span>
+          HTML Sample
+        </a>
+        <a
+          class="repo-link"
+          href="https://github.com/zhaowl94/html_sample"
+          rel="external"
+        >
+          GitHub 仓库
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+
+      <div class="hero">
+        <p class="eyebrow">STATIC FRONT-END LAB · 01—03</p>
+        <h1>从语义开始，<br />让网页回归简单。</h1>
+        <p class="hero-copy">
+          三个无需框架、无需构建即可运行的学习示例。每个页面都兼顾键盘操作、响应式布局与深色模式。
+        </p>
+        <p class="hero-copy" lang="en">
+          Three framework-free exercises built to work from a file, a local
+          server, or GitHub Pages.
+        </p>
+      </div>
+    </header>
+
+    <main id="examples" class="examples" tabindex="-1">
+      <header class="section-heading">
+        <p>选择一个练习</p>
+        <h2>Three small sites, three different lessons.</h2>
+      </header>
+
+      <div class="card-grid">
+        <article class="demo-card demo-card--profile">
+          <div class="card-index" aria-hidden="true">01</div>
+          <p class="card-kicker">SEMANTIC HTML</p>
+          <h3>Learning Profile</h3>
+          <p>
+            使用标题层级、列表、进度条和折叠详情，构建一个清晰且可访问的个人学习档案。
+          </p>
+          <ul class="tag-list" aria-label="练习重点">
+            <li>Semantics</li>
+            <li>Progress</li>
+            <li>Details</li>
+          </ul>
+          <a class="card-link" href="Html5-Final-Project.html">
+            打开单页练习
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="demo-card demo-card--frisbee">
+          <div class="card-index" aria-hidden="true">02</div>
+          <p class="card-kicker">RESPONSIVE LAYOUT</p>
+          <h3>Ultimate Field Notes</h3>
+          <p>
+            一个三页运动主题站点，展示响应式导航、信息卡片、时间线和无障碍数据表格。
+          </p>
+          <ul class="tag-list" aria-label="练习重点">
+            <li>Grid</li>
+            <li>Tables</li>
+            <li>Navigation</li>
+          </ul>
+          <a class="card-link" href="assignment-1%202/index.html">
+            打开飞盘站点
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="demo-card demo-card--conference">
+          <div class="card-index" aria-hidden="true">03</div>
+          <p class="card-kicker">MULTI-PAGE EXPERIENCE</p>
+          <h3>Signal Conference</h3>
+          <p>
+            完整的虚构会议站点，包含讲者、日程、会场及一个不会发送数据的报名演示。
+          </p>
+          <ul class="tag-list" aria-label="练习重点">
+            <li>Forms</li>
+            <li>Content</li>
+            <li>Validation</li>
+          </ul>
+          <a class="card-link" href="styles-conference/index.html">
+            打开会议站点
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>Designed as an accessible learning archive.</p>
+      <p>© 2026 zhaowl94 · MIT License</p>
+    </footer>
+  </body>
+</html>

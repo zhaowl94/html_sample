@@ -1,0 +1,351 @@
+:root {
+  color-scheme: light dark;
+  --canvas: #f2efe7;
+  --surface: #fffdf7;
+  --ink: #17223b;
+  --muted: #596477;
+  --line: #c9c2b6;
+  --violet: #6941c6;
+  --violet-soft: #e8dcff;
+  --green: #13795b;
+  --green-soft: #d8f3e8;
+  --focus: #8f2dce;
+  font-family:
+    "Segoe UI",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 20rem;
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(
+      circle at 78% 8%,
+      var(--violet-soft) 0 12rem,
+      transparent 12.1rem
+    ),
+    var(--canvas);
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.18em;
+}
+
+a:focus-visible,
+summary:focus-visible {
+  outline: 0.2rem solid var(--focus);
+  outline-offset: 0.25rem;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 10;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+  padding: 0.7rem 1rem;
+  color: #fff;
+  background: #17223b;
+  border-radius: 0.35rem;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.profile-header,
+main,
+.profile-footer {
+  width: min(100% - 2rem, 68rem);
+  margin-inline: auto;
+}
+
+.profile-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 5rem;
+  border-block-end: 0.0625rem solid var(--line);
+}
+
+.lab-link,
+.section-links a {
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.lab-link {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.lab-link span {
+  color: var(--violet);
+  font-size: 1.25rem;
+}
+
+.section-links {
+  display: flex;
+  gap: clamp(0.8rem, 3vw, 2rem);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.profile-hero {
+  max-width: 58rem;
+  padding-block: clamp(4rem, 10vw, 8rem);
+}
+
+.eyebrow,
+.section-title p {
+  margin: 0;
+  color: var(--violet);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.profile-hero h1 {
+  margin: 1rem 0 1.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 8.5vw, 6.5rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+}
+
+.lede {
+  max-width: 45rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.content-section {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.45fr) minmax(0, 1fr);
+  gap: 2rem 4rem;
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  border-block-start: 0.0625rem solid var(--line);
+}
+
+.section-title h2 {
+  max-width: 12ch;
+  margin: 0.75rem 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.practice-grid {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  gap: 0.8rem;
+  list-style: none;
+}
+
+.practice-grid li {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 0 1rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.75rem;
+}
+
+.practice-number {
+  grid-row: 1 / span 2;
+  display: grid;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  place-items: center;
+  color: var(--violet);
+  font-weight: 800;
+  background: var(--violet-soft);
+  border-radius: 50%;
+}
+
+.practice-grid h3,
+.practice-grid p {
+  margin: 0;
+}
+
+.practice-grid h3 {
+  font-size: 1.15rem;
+}
+
+.practice-grid p {
+  margin-block-start: 0.35rem;
+  color: var(--muted);
+}
+
+.progress-list {
+  display: grid;
+  gap: 2rem;
+  align-content: center;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block-end: 0.55rem;
+}
+
+.progress-label strong {
+  color: var(--green);
+}
+
+progress {
+  display: block;
+  inline-size: 100%;
+  block-size: 0.9rem;
+  overflow: hidden;
+  appearance: none;
+  background: var(--green-soft);
+  border: 0;
+  border-radius: 999px;
+}
+
+progress::-webkit-progress-bar {
+  background: var(--green-soft);
+}
+
+progress::-webkit-progress-value {
+  background: var(--green);
+  border-radius: 999px;
+}
+
+progress::-moz-progress-bar {
+  background: var(--green);
+  border-radius: 999px;
+}
+
+details {
+  align-self: start;
+  overflow: hidden;
+  background: var(--surface);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.75rem;
+}
+
+summary {
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.details-body {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--muted);
+}
+
+.details-body p {
+  margin: 0;
+}
+
+.details-body p + p {
+  margin-block-start: 1rem;
+}
+
+.profile-footer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 3rem;
+  padding-block: 2.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-block-start: 0.0625rem solid var(--line);
+}
+
+.profile-footer p {
+  margin: 0;
+}
+
+@media (max-width: 46rem) {
+  .content-section,
+  .profile-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title h2 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 34rem) {
+  .profile-nav {
+    align-items: flex-start;
+    padding-block: 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .section-links {
+    inline-size: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #111526;
+    --surface: #1b2135;
+    --ink: #f7f1ff;
+    --muted: #bbc3d7;
+    --line: #444d66;
+    --violet: #c5a7ff;
+    --violet-soft: #35295a;
+    --green: #73ddb5;
+    --green-soft: #203f37;
+    --focus: #ddc9ff;
+  }
+
+  body {
+    background:
+      radial-gradient(
+        circle at 78% 8%,
+        var(--violet-soft) 0 12rem,
+        transparent 12.1rem
+      ),
+      var(--canvas);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (forced-colors: active) {
+  progress {
+    border: 0.0625rem solid CanvasText;
+  }
+
+  .practice-number {
+    border: 0.0625rem solid CanvasText;
+  }
+}

@@ -1,43 +1,156 @@
-<!DOCTYPE html>
-<!-- <html lang="en"> -->
-<html lang="zh">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Visit the fictional Harbor Hall, home of Signal Conference."
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Venue · Signal Conference" />
+    <meta
+      property="og:description"
+      content="A fictional, accessible venue guide with no embedded map."
+    />
+    <meta
+      property="og:image"
+      content="https://zhaowl94.github.io/html_sample/assets/og.png"
+    />
+    <title>Venue · Signal Conference</title>
+    <link rel="icon" href="../assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="assets/stylesheets/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<head>
-    <meta charset="utf-8">
-    <title>Styles Conference</title>
-    <link rel="stylesheet" href="assets/stylesheets/main.css">
-</head>
-
-<body>
-    <header>
-        <a href="index.html">Styles Conference</a>
-
-        <h1>Styles Conference</h1>
-        <h3>August 24&ndash;26th &mdash; Chicago, IL</h3>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="speakers.html">Speakers</a>
-            <a href="schedule.html">Schedule</a>
-            <a href="venue.html">Venue</a>
-            <a href="register.html">Register</a>
-        </nav>
+    <header class="conference-header">
+      <div class="conference-topbar">
+        <a class="lab-link" href="../index.html">
+          <span aria-hidden="true">←</span>
+          Front-end Lab
+        </a>
+        <p>Fictional multi-page exercise · 03</p>
+      </div>
+      <div class="brand-row">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">S/</span>
+          <span>Signal Conference</span>
+        </a>
+        <p class="event-meta">October 8–10 · Harbor Hall</p>
+      </div>
+      <nav class="conference-nav" aria-label="Signal Conference">
+        <a href="index.html">Home</a>
+        <a href="speakers.html">Speakers</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="venue.html" aria-current="page">Venue</a>
+        <a href="register.html">Register</a>
+      </nav>
     </header>
 
-    <h1>Venue</h1>
+    <main id="main-content" tabindex="-1">
+      <header class="page-intro page-frame">
+        <p class="eyebrow">VENUE</p>
+        <h1>A quiet harbor for active conversation.</h1>
+        <p>
+          Harbor Hall and every location on this page are fictional. The guide
+          demonstrates useful venue content without maps, trackers, or remote
+          embeds.
+        </p>
+      </header>
 
-    <footer>
-        <small>&copy; Styles Conference</small>
+      <section
+        class="venue-overview page-frame"
+        aria-labelledby="venue-heading"
+      >
+        <div class="venue-map" aria-hidden="true">
+          <span class="map-water"></span>
+          <span class="map-block map-block--one"></span>
+          <span class="map-block map-block--two"></span>
+          <span class="map-route"></span>
+          <span class="map-pin"></span>
+        </div>
+        <div class="venue-copy">
+          <p class="eyebrow">HARBOR HALL</p>
+          <h2 id="venue-heading">
+            Everything is within one compact floor plan.
+          </h2>
+          <p>
+            The fictional venue places the main room, two studios, a quiet
+            lounge, and step-free restrooms around a central lobby.
+          </p>
+          <address>
+            12 North Quay<br />
+            Port Meridian
+          </address>
+        </div>
+      </section>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="speakers.html">Speakers</a>
-            <a href="schedule.html">Schedule</a>
-            <a href="venue.html">Venue</a>
-            <a href="register.html">Register</a>
-        </nav>
+      <section class="venue-details page-frame" aria-label="Venue details">
+        <article>
+          <p class="detail-index">01</p>
+          <h2>Arriving</h2>
+          <p>
+            The North Quay transit stop is described as a five-minute, step-free
+            route from the lobby. A covered drop-off zone sits beside the east
+            entrance.
+          </p>
+        </article>
+        <article>
+          <p class="detail-index">02</p>
+          <h2>Access</h2>
+          <p>
+            The demo venue includes level entrances, lifts, hearing loops,
+            gender-neutral restrooms, movable seating, and a low-stimulation
+            room.
+          </p>
+        </article>
+        <article>
+          <p class="detail-index">03</p>
+          <h2>Support</h2>
+          <p>
+            Registration volunteers can provide large-print schedules, seating
+            assistance, and directions without requiring disclosure of a
+            diagnosis.
+          </p>
+        </article>
+      </section>
+
+      <aside class="fiction-note page-frame">
+        <h2>Planning a real event?</h2>
+        <p>
+          Confirm accessibility information directly with the venue and publish
+          specific measurements, routes, and contact options rather than relying
+          on generic claims.
+        </p>
+      </aside>
+
+      <section class="closing-callout page-frame">
+        <p class="eyebrow">PRACTICE THE FLOW</p>
+        <h2>The registration demo includes an optional access-notes field.</h2>
+        <a class="button button--primary" href="register.html">
+          Open registration
+        </a>
+      </section>
+    </main>
+
+    <footer class="conference-footer page-frame">
+      <div>
+        <p class="footer-brand">Signal Conference</p>
+        <p>A fictional learning project by zhaowl94.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="speakers.html">Speakers</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="register.html">Register</a>
+      </nav>
     </footer>
-
-</body>
-
+  </body>
 </html>

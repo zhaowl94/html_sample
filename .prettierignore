@@ -1,0 +1,9 @@
+node_modules/
+_site/
+test-results/
+playwright-report/
+.lighthouseci/
+
+assignment-1 2/css/Mutual evaluation.css
+assignment-1 2/css/hw1 - old.css
+assignment-1 2/css/hw1 - old2.css

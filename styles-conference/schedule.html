@@ -1,43 +1,190 @@
-<!DOCTYPE html>
-<!-- <html lang="en"> -->
-<html lang="zh">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="The fictional three-day schedule for Signal Conference."
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Schedule · Signal Conference" />
+    <meta
+      property="og:description"
+      content="A fictional schedule of keynotes, studios, and discussions."
+    />
+    <meta
+      property="og:image"
+      content="https://zhaowl94.github.io/html_sample/assets/og.png"
+    />
+    <title>Schedule · Signal Conference</title>
+    <link rel="icon" href="../assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="assets/stylesheets/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<head>
-    <meta charset="utf-8">
-    <title>Styles Conference</title>
-    <link rel="stylesheet" href="assets/stylesheets/main.css">
-</head>
-
-<body>
-    <header>
-        <a href="index.html">Styles Conference</a>
-
-        <h1>Styles Conference</h1>
-        <h3>August 24&ndash;26th &mdash; Chicago, IL</h3>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="speakers.html">Speakers</a>
-            <a href="schedule.html">Schedule</a>
-            <a href="venue.html">Venue</a>
-            <a href="register.html">Register</a>
-        </nav>
+    <header class="conference-header">
+      <div class="conference-topbar">
+        <a class="lab-link" href="../index.html">
+          <span aria-hidden="true">←</span>
+          Front-end Lab
+        </a>
+        <p>Fictional multi-page exercise · 03</p>
+      </div>
+      <div class="brand-row">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">S/</span>
+          <span>Signal Conference</span>
+        </a>
+        <p class="event-meta">October 8–10 · Harbor Hall</p>
+      </div>
+      <nav class="conference-nav" aria-label="Signal Conference">
+        <a href="index.html">Home</a>
+        <a href="speakers.html">Speakers</a>
+        <a href="schedule.html" aria-current="page">Schedule</a>
+        <a href="venue.html">Venue</a>
+        <a href="register.html">Register</a>
+      </nav>
     </header>
 
-    <h1>Schedule</h1>
+    <main id="main-content" tabindex="-1">
+      <header class="page-intro page-frame">
+        <p class="eyebrow">SCHEDULE</p>
+        <h1>Time to listen, test, and compare notes.</h1>
+        <p>
+          All times and sessions are fictional. The program alternates concise
+          talks with longer studios so ideas can become working habits.
+        </p>
+      </header>
 
-    <footer>
-        <small>&copy; Styles Conference</small>
+      <div class="schedule-days page-frame">
+        <section class="schedule-day" aria-labelledby="day-one-heading">
+          <header>
+            <p>DAY ONE · OCTOBER 8</p>
+            <h2 id="day-one-heading">Foundations</h2>
+          </header>
+          <ol>
+            <li>
+              <time datetime="09:00">09:00</time>
+              <div>
+                <p class="session-type">WELCOME</p>
+                <h3>A shared definition of quality</h3>
+                <p>Opening notes from the Signal program team.</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="10:00">10:00</time>
+              <div>
+                <p class="session-type">KEYNOTE</p>
+                <h3>Beyond the audit</h3>
+                <p>Maya Chen · Main room</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="13:30">13:30</time>
+              <div>
+                <p class="session-type">STUDIO</p>
+                <h3>Keyboard contracts in practice</h3>
+                <p>Facilitated lab · Workshop room A</p>
+              </div>
+            </li>
+          </ol>
+        </section>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="speakers.html">Speakers</a>
-            <a href="schedule.html">Schedule</a>
-            <a href="venue.html">Venue</a>
-            <a href="register.html">Register</a>
-        </nav>
+        <section class="schedule-day" aria-labelledby="day-two-heading">
+          <header>
+            <p>DAY TWO · OCTOBER 9</p>
+            <h2 id="day-two-heading">Resilience</h2>
+          </header>
+          <ol>
+            <li>
+              <time datetime="09:30">09:30</time>
+              <div>
+                <p class="session-type">KEYNOTE</p>
+                <h3>Designing the fallback first</h3>
+                <p>Idris Cole · Main room</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="11:15">11:15</time>
+              <div>
+                <p class="session-type">ROUNDTABLE</p>
+                <h3>What belongs in a dependency budget?</h3>
+                <p>Community discussion · Library</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="14:00">14:00</time>
+              <div>
+                <p class="session-type">STUDIO</p>
+                <h3>Plan the unhappy path</h3>
+                <p>Facilitated lab · Workshop room B</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="schedule-day" aria-labelledby="day-three-heading">
+          <header>
+            <p>DAY THREE · OCTOBER 10</p>
+            <h2 id="day-three-heading">Collaboration</h2>
+          </header>
+          <ol>
+            <li>
+              <time datetime="09:30">09:30</time>
+              <div>
+                <p class="session-type">KEYNOTE</p>
+                <h3>Reviews that strengthen the system</h3>
+                <p>Elena Martín · Main room</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="11:15">11:15</time>
+              <div>
+                <p class="session-type">PRACTICE</p>
+                <h3>Write a useful decision record</h3>
+                <p>Guided exercise · Library</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="14:30">14:30</time>
+              <div>
+                <p class="session-type">CLOSING</p>
+                <h3>One habit to take home</h3>
+                <p>Participant reflections · Main room</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <section class="closing-callout page-frame">
+        <p class="eyebrow">READY WHEN YOU ARE</p>
+        <h2>Choose a demo pass and practice the form flow.</h2>
+        <a class="button button--primary" href="register.html">
+          Open registration
+        </a>
+      </section>
+    </main>
+
+    <footer class="conference-footer page-frame">
+      <div>
+        <p class="footer-brand">Signal Conference</p>
+        <p>A fictional learning project by zhaowl94.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="speakers.html">Speakers</a>
+        <a href="venue.html">Venue</a>
+        <a href="register.html">Register</a>
+      </nav>
     </footer>
-
-</body>
-
+  </body>
 </html>

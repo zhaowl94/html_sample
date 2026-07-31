@@ -1,95 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="An accessible table exercise using fictional ultimate teams."
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Teams · Ultimate Field Notes" />
+    <meta
+      property="og:description"
+      content="A responsive and accessible data-table exercise."
+    />
+    <meta
+      property="og:image"
+      content="https://zhaowl94.github.io/html_sample/assets/og.png"
+    />
+    <title>Teams · Ultimate Field Notes</title>
+    <link rel="icon" href="../assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="css/hw1.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Ultimate Frisbee - Teams</title>
-    <link rel="stylesheet" href="css/hw1.css">
-    <!-- <link rel="stylesheet" href="css/Mutual evaluation.css"> -->
-</head>
+    <header class="sport-header">
+      <div class="topline">
+        <a href="../index.html">
+          <span aria-hidden="true">←</span>
+          Front-end Lab
+        </a>
+        <p>Responsive layout exercise · 02</p>
+      </div>
 
-<body>
-    <header>
-        <h1>Ulimate Frisbee Teams</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="history.html" class="active">Teams</a>
-            <a href="history.html">History</a>
-            <a href="http://www.usaultimate.org/index.html" target="_blank">USA Ultimate</a>
-        </nav>
+      <div class="masthead">
+        <div>
+          <p class="eyebrow">MOVE · PASS · RESPECT</p>
+          <h1>Ultimate<br />Field Notes</h1>
+          <p class="masthead-copy">
+            A compact guide to a fast game built on movement, trust, and shared
+            responsibility.
+          </p>
+        </div>
+        <div class="disc-mark" aria-hidden="true"></div>
+      </div>
+
+      <nav class="sport-nav" aria-label="Ultimate Field Notes">
+        <a href="index.html">Home</a>
+        <a href="teams.html" aria-current="page">Teams</a>
+        <a href="history.html">History</a>
+      </nav>
     </header>
-    <main>
-        <aside class="left">
-            <a href="https://commons.wikimedia.org/wiki/File%3AUltimate_Frisbee%2C_Jul_2009_-_17.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Ultimate_Frisbee%2C_Jul_2009_-_19.jpg" alt="Creative Common Ultimate Photo" title="By Ed Yourdon [CC BY-SA 2.0 (http://creativecommons.org/licenses/by-sa/2.0)], via Wikimedia Commons"
-                /> </a>
 
-            <a href="https://commons.wikimedia.org/wiki/File%3AUltimate_Frisbee_Colorado_Cup_2005.jpg"><img alt="Ultimate Frisbee Colorado Cup 2005" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Ultimate_Frisbee_Colorado_Cup_2005.jpg/512px-Ultimate_Frisbee_Colorado_Cup_2005.jpg" /></a>
+    <main id="main-content" class="page-shell" tabindex="-1">
+      <aside class="field-notes" aria-labelledby="teams-card-heading">
+        <p class="eyebrow">ROSTER CARD</p>
+        <h2 id="teams-card-heading">Demo data only</h2>
+        <p>
+          Every team and schedule on this page is fictional. The table exists to
+          demonstrate captions, headers, focusable overflow, and responsive
+          presentation.
+        </p>
+      </aside>
 
-
-            <a href="https://www.flickr.com/photos/paradisecoastie/15409853738/" title="Ultimate Frisbee"><img src="https://farm4.staticflickr.com/3948/15409853738_7dbfbfbac7_k.jpg" alt="Ultimate Frisbee"></a>
-        </aside>
-        <section class="right">
-            <h2>College Teams</h2>
-            <p>This is not meant to be a comprehensive list of all the teams, just a sampling from around the United States. I focused on the ones that I though had cools names.</p>
-            <table>
-                <tr>
-                    <th>Team Name</th>
-                    <th>Location</th>
-                    <th>League Type</th>
-                </tr>
-                <tr>
-                    <td>Afterburn - Air Force</td>
-                    <td>Colorado</td>
-                    <td>Men's</td>
-                </tr>
-                <tr>
-                    <td>Cold Front (Bates College)</td>
-                    <td>Maine</td>
-                    <td>Women's</td>
-                </tr>
-                <tr>
-                    <td>Disco Inferno (Brown University)</td>
-                    <td>Rhode Island</td>
-                    <td>Women's</td>
-                </tr>
-                <tr>
-                    <td>Bad Habit (Catholic University)</td>
-                    <td>Washington DC</td>
-                    <td>Men's</td>
-                </tr>
-                <tr>
-                    <td>Jive Turkeys (Dickinson College)</td>
-                    <td>Pennsylvania</td>
-                    <td>Both</td>
-                </tr>
-                <tr>
-                    <td>Knights of the Round Disc(Longwood College)</td>
-                    <td>Virginia</td>
-                    <td>Men's</td>
-                </tr>
-                <tr>
-                    <td>Ninjas (University of Minnesota)</td>
-                    <td>Minnesota</td>
-                    <td>Women's</td>
-                </tr>
-                <tr>
-                    <td>Flying Squirrels (Hendrix College)</td>
-                    <td>Arizona</td>
-                    <td>Men's</td>
-                </tr>
-                <tr>
-                    <td>Superfly (Yale)</td>
-                    <td>Connecticut</td>
-                    <td>Men's</td>
-                </tr>
-                <tr>
-                    <td>Flywheel (University of Michigan</td>
-                    <td>Michigan</td>
-                    <td>Women's</td>
-                </tr>
-            </table>
+      <div class="page-content">
+        <section class="intro-block">
+          <p class="eyebrow">COMMUNITY DIRECTORY</p>
+          <h2>Find a practice that fits</h2>
+          <p class="lead">
+            Different groups can emphasize beginner skills, competitive systems,
+            mixed play, or casual community sessions.
+          </p>
         </section>
-    </main>
-</body>
 
+        <section
+          class="table-scroll"
+          aria-label="Fictional ultimate team directory"
+          tabindex="0"
+        >
+          <table>
+            <caption>
+              Fictional community teams and their weekly sessions
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Team</th>
+                <th scope="col">Focus</th>
+                <th scope="col">Session</th>
+                <th scope="col">New players</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">River Comets</th>
+                <td>Beginner fundamentals</td>
+                <td>Tuesday evening</td>
+                <td><span class="status status--open">Welcome</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Northwind</th>
+                <td>Competitive mixed</td>
+                <td>Thursday evening</td>
+                <td><span class="status">Tryout</span></td>
+              </tr>
+              <tr>
+                <th scope="row">City Orbit</th>
+                <td>Casual pickup</td>
+                <td>Saturday morning</td>
+                <td><span class="status status--open">Welcome</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Pine Flight</th>
+                <td>Youth development</td>
+                <td>Sunday afternoon</td>
+                <td><span class="status status--open">Welcome</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Harbor Arc</th>
+                <td>Beach skills</td>
+                <td>Sunday morning</td>
+                <td><span class="status">Waitlist</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="source-note">
+          <h2>Starting a real session?</h2>
+          <p>
+            Agree on the rules, field boundaries, safety expectations, and
+            Spirit of the Game before the first pull.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="sport-footer">
+      <p>Ultimate Field Notes · fictional editorial treatment by zhaowl94</p>
+      <a href="../index.html">Return to HTML Sample</a>
+    </footer>
+  </body>
 </html>

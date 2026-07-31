@@ -1,0 +1,353 @@
+:root {
+  color-scheme: light dark;
+  --paper: #f7f2e8;
+  --paper-deep: #ebe3d3;
+  --ink: #08264c;
+  --muted: #536379;
+  --line: #c8c0b2;
+  --card: #fffaf0;
+  --coral: #ed4938;
+  --blue: #187bd1;
+  --lime: #95b900;
+  --focus: #c92f20;
+  --shadow: 0 1.25rem 3.5rem rgb(8 38 76 / 12%);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 20rem;
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(
+      90deg,
+      transparent 49.85%,
+      rgb(8 38 76 / 6%) 50% 50.15%,
+      transparent 50.15%
+    ),
+    var(--paper);
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+  outline: 0.2rem solid var(--focus);
+  outline-offset: 0.25rem;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 10;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+  padding: 0.7rem 1rem;
+  color: #fff;
+  background: var(--ink);
+  border-radius: 0.35rem;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header,
+.examples,
+.site-footer {
+  width: min(100% - 2rem, 74rem);
+  margin-inline: auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 5rem;
+  border-block-end: 0.0625rem solid var(--line);
+}
+
+.wordmark,
+.repo-link {
+  display: inline-flex;
+  gap: 0.55rem;
+  align-items: center;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.wordmark span {
+  color: var(--coral);
+  font-size: 1.4rem;
+}
+
+.repo-link {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(16rem, 0.8fr);
+  gap: 1rem 4rem;
+  align-items: end;
+  padding-block: clamp(4rem, 10vw, 8rem);
+}
+
+.eyebrow,
+.card-kicker,
+.section-heading p {
+  margin: 0;
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  grid-row: 2 / span 2;
+  margin: 0;
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-weight: 900;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.hero-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.examples {
+  padding-block: 1rem 6rem;
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.45fr) 1fr;
+  gap: 1rem 3rem;
+  align-items: end;
+  margin-block-end: 2rem;
+  padding-block-start: 2rem;
+  border-block-start: 0.0625rem solid var(--line);
+}
+
+.section-heading h2 {
+  max-width: 24ch;
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.demo-card {
+  position: relative;
+  display: flex;
+  min-height: 31rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  overflow: hidden;
+  flex-direction: column;
+  background: var(--card);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.demo-card::before {
+  position: absolute;
+  inline-size: 9rem;
+  block-size: 9rem;
+  inset-block-start: -4.5rem;
+  inset-inline-end: -4.5rem;
+  background: var(--card-accent);
+  border-radius: 50%;
+  content: "";
+}
+
+.demo-card--profile {
+  --card-accent: var(--lime);
+}
+
+.demo-card--frisbee {
+  --card-accent: var(--coral);
+}
+
+.demo-card--conference {
+  --card-accent: var(--blue);
+}
+
+.card-index {
+  margin-block-end: 4rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.demo-card h3 {
+  margin: 0.5rem 0 1rem;
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.demo-card p:not(.card-kicker) {
+  margin: 0;
+  color: var(--muted);
+}
+
+.tag-list {
+  display: flex;
+  padding: 0;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 0.0625rem solid var(--line);
+  border-radius: 999px;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-start: auto;
+  padding-block-start: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  border-block-start: 0.0625rem solid var(--line);
+}
+
+.card-link span {
+  color: var(--card-accent);
+  font-size: 1.6rem;
+  transition: transform 180ms ease;
+}
+
+.card-link:hover span {
+  transform: translateX(0.25rem);
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-block-start: 0.0625rem solid var(--line);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 52rem) {
+  .hero,
+  .section-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    grid-row: auto;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-card {
+    min-height: 25rem;
+  }
+}
+
+@media (max-width: 34rem) {
+  .topbar,
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .hero {
+    padding-block: 3.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 16vw, 4.5rem);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #071728;
+    --paper-deep: #0d2238;
+    --ink: #fff8ea;
+    --muted: #b5c4d5;
+    --line: #34506c;
+    --card: #102940;
+    --coral: #ff6f5f;
+    --blue: #59b2ff;
+    --lime: #b9dc39;
+    --focus: #ff9d91;
+    --shadow: 0 1.25rem 3.5rem rgb(0 0 0 / 28%);
+  }
+
+  body {
+    background:
+      linear-gradient(
+        90deg,
+        transparent 49.85%,
+        rgb(255 255 255 / 7%) 50% 50.15%,
+        transparent 50.15%
+      ),
+      var(--paper);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .card-link span {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .demo-card::before {
+    border: 0.125rem solid CanvasText;
+  }
+}

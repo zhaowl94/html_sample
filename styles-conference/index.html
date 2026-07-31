@@ -1,86 +1,165 @@
-<!DOCTYPE html>
-<!-- <html lang="en"> -->
-<html lang="zh">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Signal is a fictional conference demo for humane front-end design."
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Signal Conference · HTML Sample" />
+    <meta
+      property="og:description"
+      content="A fictional conference demo about a more human web."
+    />
+    <meta
+      property="og:image"
+      content="https://zhaowl94.github.io/html_sample/assets/og.png"
+    />
+    <title>Signal Conference</title>
+    <link rel="icon" href="../assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="assets/stylesheets/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<head>
-    <meta charset="utf-8">
-    <title>Styles Conference</title>
-    <link rel="stylesheet" href="assets/stylesheets/main.css">
-</head>
-
-<body>
-    <header>
-        <a href="index.html">Styles Conference</a>
-
-        <!-- <h1>Styles Conference</h1> -->
-        <h3>August 24&ndash;26th &mdash; Chicago, IL</h3>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="speakers.html">Speakers</a>
-            <a href="schedule.html">Schedule</a>
-            <a href="venue.html">Venue</a>
-            <a href="register.html">Register</a>
-        </nav>
+    <header class="conference-header">
+      <div class="conference-topbar">
+        <a class="lab-link" href="../index.html">
+          <span aria-hidden="true">←</span>
+          Front-end Lab
+        </a>
+        <p>Fictional multi-page exercise · 03</p>
+      </div>
+      <div class="brand-row">
+        <a class="brand" href="index.html" aria-current="page">
+          <span class="brand-mark" aria-hidden="true">S/</span>
+          <span>Signal Conference</span>
+        </a>
+        <p class="event-meta">October 8–10 · Harbor Hall</p>
+      </div>
+      <nav class="conference-nav" aria-label="Signal Conference">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="speakers.html">Speakers</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="venue.html">Venue</a>
+        <a href="register.html">Register</a>
+      </nav>
     </header>
 
-    <section>
-        <h2>Dedicated to the Craft of Building Websites</h2>
-        <p>Every year the brightest web designers and front-end developers descend on Chicago to discuss the latest
-            technologies. Join us this August!</p>
-
-        <a href="register.html">Register Now</a>
-    </section>
-
-    <section>
-
-        <section>
-            <a href="speakers.html">
-                <h5>Speakers</h5>
-                <h3>World-Class Speakers</h3>
+    <main id="main-content" tabindex="-1">
+      <section class="conference-hero page-frame">
+        <div class="hero-copy">
+          <p class="eyebrow">A FICTIONAL CONFERENCE FOR REAL WEB PRACTICE</p>
+          <h1>Ideas for a more human web.</h1>
+          <p class="hero-lede">
+            Three focused days about resilient interfaces, accessible systems,
+            and teams that design with care.
+          </p>
+          <div class="button-row">
+            <a class="button button--primary" href="register.html">
+              Try the registration demo
             </a>
+            <a class="button button--quiet" href="schedule.html">
+              Explore the schedule
+            </a>
+          </div>
+        </div>
+        <div class="signal-graphic" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </section>
 
-            <p>Joining us from all around the world are over twenty fantastic speakers, here to share their stories.
+      <section class="manifesto page-frame" aria-labelledby="manifesto-heading">
+        <p class="eyebrow">WHY SIGNAL</p>
+        <div>
+          <h2 id="manifesto-heading">
+            The best interface is one more person can use.
+          </h2>
+          <p>
+            Signal brings fictional practitioners together around concrete
+            methods: meaningful markup, visible focus, plain language, durable
+            CSS, and respectful product decisions.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="feature-section page-frame"
+        aria-labelledby="themes-heading"
+      >
+        <header class="section-heading">
+          <p>PROGRAM THEMES</p>
+          <h2 id="themes-heading">Three tracks, one shared standard</h2>
+        </header>
+        <div class="feature-grid">
+          <article>
+            <p class="feature-index">01</p>
+            <h3>Inclusive foundations</h3>
+            <p>
+              Semantics, keyboard behavior, contrast, and content structure
+              treated as architecture rather than polish.
             </p>
-        </section>
-
-        <section>
-            <a href="schedule.html">
-                <h5>Schedule</h5>
-                <h3>Three Inspiring Days</h3>
-            </a>
-
-            <p>Enjoy three inspiring and action-packed days of talks, gatherings, and all-around good times.</p>
-        </section>
-
-        <section>
-            <a href="venue.html">
-                <h5>Venue</h5>
-                <h3>The Chicago Theatre</h3>
-            </a>
-
-            <p>Within the heart of downtown Chicago, The Chicago Theatre will provide a beautiful conference venue.
+            <a href="speakers.html#maya-chen">Meet the speaker</a>
+          </article>
+          <article>
+            <p class="feature-index">02</p>
+            <h3>Resilient systems</h3>
+            <p>
+              Small dependencies, deliberate fallbacks, and interfaces that
+              remain useful when the happy path disappears.
             </p>
-        </section>
+            <a href="speakers.html#idris-cole">Meet the speaker</a>
+          </article>
+          <article>
+            <p class="feature-index">03</p>
+            <h3>Healthy collaboration</h3>
+            <p>
+              Review practices and shared language that make quality easier to
+              sustain across a team.
+            </p>
+            <a href="speakers.html#elena-martin">Meet the speaker</a>
+          </article>
+        </div>
+      </section>
 
-    </section>
+      <section class="event-strip" aria-label="Conference summary">
+        <div class="page-frame event-stats">
+          <p><strong>3</strong><span>focused days</span></p>
+          <p><strong>9</strong><span>practical sessions</span></p>
+          <p><strong>0</strong><span>tracking scripts</span></p>
+        </div>
+      </section>
 
-    <footer>
-        <small>&copy; Styles Conference</small>
+      <section class="closing-callout page-frame">
+        <p class="eyebrow">SAVE A DEMO SEAT</p>
+        <h2>No payment. No account. No data leaves your browser.</h2>
+        <a class="button button--primary" href="register.html">
+          Open registration
+        </a>
+      </section>
+    </main>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="speakers.html">Speakers</a>
-            <a href="schedule.html">Schedule</a>
-            <a href="venue.html">Venue</a>
-            <a href="register.html">Register</a>
-        </nav>
+    <footer class="conference-footer page-frame">
+      <div>
+        <p class="footer-brand">Signal Conference</p>
+        <p>A fictional learning project by zhaowl94.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="speakers.html">Speakers</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="venue.html">Venue</a>
+        <a href="register.html">Register</a>
+      </nav>
     </footer>
-
-
-    <!-- <h1>Styles Conference</h1>
-    <p>Every year the brightest web designers and front-end developers descend on Chicago to discuss the latest
-        technologies. Join us this August!</p> -->
-</body>
-
+  </body>
 </html>
